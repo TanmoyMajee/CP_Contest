@@ -53,7 +53,7 @@ int main()
     }
   }
   return 0;
-// }
+}
 // A.Serval and String Theory
 //     time limit per test1 second
 //         memory limit per test256 megabytes
