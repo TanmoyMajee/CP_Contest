@@ -22,7 +22,7 @@
 // Input
 // The first line contains one integer t
 //  (1≤t≤1000
-// ) — the number of test cases.
+// ) — the number of test es.  
 
 // Each test case consists of two lines:
 
