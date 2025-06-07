@@ -18,6 +18,7 @@ void solve(){
       min--;
       ans.push_back(min);
     }
+    
   }
   int diff = n-mx;
   for(int i = 0; i < ans.size(); i++){
