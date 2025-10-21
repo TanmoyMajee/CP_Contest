@@ -101,4 +101,64 @@ int main()
   #include<sstream> for stringstrem 
    stod() str to decimel
   
-  
+Matrix given line by line (each row in a line)
+🧩 Example Input:
+1 0 1
+0 1 0
+1 1 0
+
+
+👉 No n or m given. 
+
+✅ Code:
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string line;
+    vector<vector<int>> matrix;
+
+    while (getline(cin, line)) {        // read until EOF
+        if (line.empty()) break;        // stop if blank line (optional)
+        stringstream ss(line);
+        vector<int> row;
+        int val;
+        while (ss >> val) row.push_back(val);
+        matrix.push_back(row);
+    }
+
+    // ✅ Print matrix
+    for (auto &row : matrix) {
+        for (auto &x : row) cout << x << " ";
+        cout << "\n";
+    }
+}
+```
+📘 Handles:
+[[1,2,3],[4,5,6]], { {1,2},{3,4} }, (1,2,3)(4,5,6)
+✅ Works for integers, negatives, and decimals
+Input inside brackets or parentheses
+```cpp
+string s;
+getline(cin, s);
+vector<vector<double>> mat;
+vector<double> row;
+string num = "";
+
+for (char ch : s) {
+    if (isdigit(ch) || ch == '-' || ch == '.')
+        num += ch;
+    else if (!num.empty()) {
+        row.push_back(stod(num));
+        num = "";
+    }
+    if (ch == ']' || ch == ')') {
+        if (!row.empty()) {
+            mat.push_back(row);
+            row.clear();
+        }
+    }
+}
+````
+
