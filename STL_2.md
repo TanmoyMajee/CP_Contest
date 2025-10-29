@@ -96,3 +96,40 @@ auto comp = [](pair<int,int> &a, pair<int,int> &b) {
 
 priority_queue<pair<int,int>, vector<pair<int,int>>, decltype(comp)> minHeap(comp);
 ````
+
+# ⚡ C++ Notes – STL Functions Using `[begin, end)` Range
+
+## 🔹 Rule
+Most STL algorithms in `<algorithm>` work on **ranges**:
+> `[start, end)` → includes `start`, excludes `end`
+
+So the **second iterator is not an index or count**, it’s the **position after the last element** to process **Not the Size**.
+
+---
+
+## 🔹 Common STL Functions Following `[begin, end)` Rule
+
+| Function | Description |
+|-----------|--------------|
+| `sort(first, last)` | Sorts elements in ascending order |
+| `reverse(first, last)` | Reverses elements in range |
+| `rotate(first, middle, last)` | Rotates elements so that `middle` becomes first |
+| `count(first, last, val)` | Counts how many times `val` appears |
+| `find(first, last, val)` | Finds first occurrence of `val` |
+| `max_element(first, last)` | Returns iterator to max element |
+| `min_element(first, last)` | Returns iterator to min element |
+| `accumulate(first, last, init)` *(from `<numeric>`)* | Sums up elements starting with `init` |
+| `unique(first, last)` | Removes consecutive duplicates |
+| `lower_bound(first, last, val)` | Returns iterator to first element ≥ val |
+| `upper_bound(first, last, val)` | Returns iterator to first element > val |
+
+---
+
+## 🔹 Demo Syntax Examples
+
+```cpp
+sort(v.begin(), v.end());                // sort whole vector
+reverse(v.begin(), v.begin() + 3);       // reverse first 3 elements
+rotate(v.begin(), v.begin() + 2, v.end()); // rotate by 2 positions
+count(v.begin(), v.end(), 5);            // count 5s
+```
