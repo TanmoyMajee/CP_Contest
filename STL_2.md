@@ -78,6 +78,16 @@ int main() {
     // Use lambda in sort
     sort(v.begin(), v.end(), comp);
 
+struct cmp {
+    bool operator()(pair<int,int> &a, pair<int,int> &b) {
+        return a.second < b.second;
+    }
+};
+
+vector<pair<int,int>> v = {{3,5}, {1,2}, {4,1}};
+sort(v.begin(), v.end(), cmp());  // pass object of cmp
+
+
     for (auto &p : v)
         cout << p.first << " " << p.second << endl;
 }
@@ -95,6 +105,16 @@ auto comp = [](pair<int,int> &a, pair<int,int> &b) {
 };
 
 priority_queue<pair<int,int>, vector<pair<int,int>>, decltype(comp)> minHeap(comp);
+
+
+struct compare {
+    bool operator()(pair<int,int> &a, pair<int,int> &b) { // operator is fix 
+        return a.second > b.second;   // smaller 'second' comes first
+    }
+};
+
+priority_queue<pair<int,int>, vector<pair<int,int>>, compare> pq;
+
 ````
 
 # ⚡ C++ Notes – STL Functions Using `[begin, end)` Range
