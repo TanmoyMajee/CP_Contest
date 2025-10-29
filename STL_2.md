@@ -55,3 +55,44 @@ public:
     }
 };
 ````
+
+# ⚡ C++ Notes – Lambda Function for Custom Sorting
+
+## 🔹 Creating a Lambda Separately
+
+You can define a **lambda function** separately and then pass it to `sort()`.
+
+### Example 1: Sort Vector of Pairs by Second Element (Descending)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<pair<int,int>> v = {{2,5}, {1,3}, {2,1}};
+
+    // Define lambda separately
+    auto comp = [](pair<int,int> &a, pair<int,int> &b) {
+        return a.second > b.second;   // sort by second in descending order
+    };
+      sort(v.begin(), v.end(), greater<int>()); // descending order   ()imp after grter 
+    // Use lambda in sort
+    sort(v.begin(), v.end(), comp);
+
+    for (auto &p : v)
+        cout << p.first << " " << p.second << endl;
+}
+````
+
+# ⚡ C++ Notes – Min Heap Declaration & Custom Comparator
+
+## 🔹 Basic Min Heap Declaration
+
+```cpp
+priority_queue<int, vector<int>, greater<int>> pq;      // ✅ Min-Heap
+priority_queue<int, vector<int>, greater<int>()> pq;    // ✅ Also Min-Heap (with parentheses)
+auto comp = [](pair<int,int> &a, pair<int,int> &b) {
+    return a.second > b.second; // smaller 'second' value gets higher priority
+};
+
+priority_queue<pair<int,int>, vector<pair<int,int>>, decltype(comp)> minHeap(comp);
+````
