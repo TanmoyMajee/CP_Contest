@@ -98,6 +98,10 @@ sort(v.begin(), v.end(), cmp());  // pass object of cmp
 ## 🔹 Basic Min Heap Declaration
 
 ```cpp
+#include <queue> 
+#include <vector>
+#include <functional>   // for greater<>
+
 priority_queue<int, vector<int>, greater<int>> pq;      // ✅ Min-Heap
 priority_queue<int, vector<int>, greater<int>()> pq;    // ✅ Also Min-Heap (with parentheses)
 auto comp = [](pair<int,int> &a, pair<int,int> &b) {
