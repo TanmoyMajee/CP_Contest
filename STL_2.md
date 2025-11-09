@@ -157,3 +157,28 @@ reverse(v.begin(), v.begin() + 3);       // reverse first 3 elements
 rotate(v.begin(), v.begin() + 2, v.end()); // rotate by 2 positions
 count(v.begin(), v.end(), 5);            // count 5s
 ```
+
+If using C++11 type inference (but still no range-based loop):
+```
+for(auto it = mp.begin(); it != mp.end(); it++){
+    // same as above
+}
+
+map<int,int> mp;
+map<int,int>::iterator it;
+for(it = mp.begin(); it != mp.end(); it++){
+    int key = it->first;
+    int value = it->second;
+
+    // use key and value
+}
+
+set<int> st;
+
+set<int>::iterator it;
+for(it = st.begin(); it != st.end(); it++){
+    int value = *it;
+
+    // use value
+}
+````
