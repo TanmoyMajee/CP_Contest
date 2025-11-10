@@ -131,7 +131,7 @@ So the **second iterator is not an index or count**, it’s the **position after
 
 ---
 
-## 🔹 Common STL Functions Following `[begin, end)` Rule
+## 🔹 Common STL Functions Following `[begin, end)` Rule <algorithm> Lib
 
 | Function | Description |
 |-----------|--------------|
