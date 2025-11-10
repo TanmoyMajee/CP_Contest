@@ -130,8 +130,8 @@ Most STL algorithms in `<algorithm>` work on **ranges**:
 So the **second iterator is not an index or count**, it’s the **position after the last element** to process **Not the Size**.
 
 ---
-
-## 🔹 Common STL Functions Following `[begin, end)` Rule <algorithm> Lib
+## <algorithm> , <utility> for Pair , <cmath> for sqrt , <cctype> for isdigit
+## 🔹 Common STL Functions Following `[begin, end)` Rule `<algorithm>` Lib
 
 | Function | Description |
 |-----------|--------------|
