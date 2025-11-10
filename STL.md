@@ -60,6 +60,7 @@ Sample Output
 **THis Appch will work for all **
 ```cpp
 #include <iostream>
+#include <cctype>     // for isdigit
 #include <string>
 #include <sstream>
 #include <vector>
