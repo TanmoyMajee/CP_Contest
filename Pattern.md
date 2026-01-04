@@ -1,4 +1,156 @@
 ````cpp
+Right Aligned Half Pyramid (STAR)
+   *
+  **
+ ***
+****
+
+// ⭐ IMPORTANT for space-handling logic
+void rightAlignedStar(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=i;j++) cout<<"*";
+        cout<<endl;
+    }
+}
+
+6️⃣ Number Increasing Triangle (IMPORTANT)
+1
+12
+123
+1234
+
+// ⭐ IMPORTANT number pattern
+void numIncreasing(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++)
+            cout<<j;
+        cout<<endl;
+    }
+}
+
+7️⃣ Floyd’s Triangle
+1
+2 3
+4 5 6
+7 8 9 10
+
+void floydTriangle(int n){
+    int cnt=1;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++)
+            cout<<cnt++<<" ";
+        cout<<endl;
+    }
+}
+
+8️⃣ 0–1 Triangle (You already wrote, kept clean)
+1
+01
+101
+0101
+
+// ⭐ VERY IMPORTANT – commonly asked
+void zeroOneTriangle(int n){
+    for(int i=1;i<=n;i++){
+        bool flag = (i%2==1);
+        for(int j=1;j<=i;j++){
+            cout<<flag;
+            flag=!flag;
+        }
+        cout<<endl;
+    }
+}
+
+9️⃣ Palindromic Number Pyramid (VERY IMPORTANT)
+   1
+  121
+ 12321
+1234321
+
+// ⭐⭐ VERY IMPORTANT (logic-based)
+void palindromicPyramid(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=i;j++) cout<<j;
+        for(int j=i-1;j>=1;j--) cout<<j;
+        cout<<endl;
+    }
+}
+
+🔟 Full Pyramid (STAR)
+   *
+  ***
+ *****
+*******
+
+// Classic centered pyramid
+void pyramidStar(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=2*i-1;j++) cout<<"*";
+        cout<<endl;
+    }
+}
+
+1️⃣1️⃣ Inverted Pyramid (STAR)
+*******
+ *****
+  ***
+   *
+
+void invertedPyramid(int n){
+    for(int i=n;i>=1;i--){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=2*i-1;j++) cout<<"*";
+        cout<<endl;
+    }
+}
+
+1️⃣2️⃣ Diamond Pattern (IMPORTANT)
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+
+// ⭐ VERY IMPORTANT diamond pattern
+void diamond(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=2*i-1;j++) cout<<"*";
+        cout<<endl;
+    }
+    for(int i=n-1;i>=1;i--){
+        for(int j=1;j<=n-i;j++) cout<<" ";
+        for(int j=1;j<=2*i-1;j++) cout<<"*";
+        cout<<endl;
+    }
+}
+
+1️⃣3️⃣ Pascal’s Triangle (INTERVIEW FAVOURITE)
+1
+1 1
+1 2 1
+1 3 3 1
+
+// ⭐⭐ HIGH IMPORTANCE
+void pascalTriangle(int n){
+    for(int i=0;i<n;i++){
+        int val=1;
+        for(int j=0;j<=i;j++){
+            cout<<val<<" ";
+            val = val*(i-j)/(j+1);
+        }
+        cout<<endl;
+    }
+}
+
+````
+
+````cpp
 #include <bits/stdc++.h>
 using namespace std;
 
